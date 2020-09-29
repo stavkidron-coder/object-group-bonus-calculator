@@ -63,12 +63,36 @@ function name(employeesArray){
 }
 
 name(employees);
+let bonusArray = [];
 
-
-
-function bonusPercentage(){
-  
+function bonusPercentage(employeeArray) {
+    console.log('In bonusPercentage')
+    for (let i = 0; i < employeeArray.length; i++) {
+    let bonusPercentageActual = 0
+    if (employeeArray[i].reviewRating <= 2) {
+      bonusArray.push(bonusPercentageActual)
+    } else if (employeeArray[i].reviewRating === 3){
+      bonusPercentageActual = .04 
+      bonusArray.push(bonusPercentageActual)
+    } else if (employeeArray[i].reviewRating === 4){
+      bonusPercentageActual = .06
+      bonusArray.push(bonusPercentageActual)
+    } else if (employeeArray[i].reviewRating === 5){
+      bonusPercentageActual = .1
+      bonusArray.push(bonusPercentageActual)
+    } 
+  }
+  return bonusArray
 }
+
+bonusPercentage(employees);
+
+
+// Need to make function checking if a bouns % is added for having a 4 digit code
+// Need to make a function to reduce a bonus down to 1% if their annual is over $65000
+// need to then make a function that times the over bonusPercent and get the $ amount for bonus
+// Plug all data into a single array through the use of a function to combine them calling all featured functions
+
 
 
 function totalCompensation(){
