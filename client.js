@@ -33,6 +33,53 @@ const employees = [
 
 // YOU SHOULD NOT NEED TO CHANGE ANYTHING ABOVE THIS POINT
 
+// ## Processing Employee Bonuses
+
+// Loop over the `employees` array and do the following:
+
+// * use each employee object as the input to the function described below.
+// * `console.log` the results of each iteration.
+
+
+//## Function Logic
+
+// Write a declared function that takes in one **Employee** object (as an argument to the function), and returns a new **object**
+//with the following properties:
+
+// * The `name` property should contain the employee's name.
+// * The `bonusPercentage` property should contain the bonus percentage the employee is to receive. See section below for calculation instructions.
+// * The `totalCompensation` property should be the adjusted annual compensation (base annual + bonus)
+// * The `totalBonus` should be the employee's total bonus rounded to the nearest dollar.
+
+let employeeNames = [];
+
+function name(employeesArray){
+  console.log('name');
+  
+  for (let i = 0; i < employeesArray.length; i++) {
+    employeeNames.push(employeesArray[i].name);
+  }
+  return employeeNames;
+}
+
+name(employees);
+
+
+
+function bonusPercentage(){
+  
+}
+
+
+function totalCompensation(){
+
+}
+
+
+function totalBonus(){
+
+}
+
 // Take small steps! Don't write a for loop and two functions that do all of the calculations right away.
 // This problem is massive! Break the problem down. Use the debugger.
 // What is the fewest lines of code I can write and test to get just a little closer?
