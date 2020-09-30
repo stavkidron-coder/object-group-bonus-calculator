@@ -74,7 +74,7 @@ function bonusPercentage(employeeArray) {
       bonusArray.push(bonusPercentageActual)
     }else if (employeeArray[i].reviewRating <= 2) {
       bonusArray.push(bonusPercentageActual)
-    }
+    } // end of checking at 2 rating / additional .05
     
     else if (employeeArray[i].reviewRating === 3 && employeeArray[i].employeeNumber < 10000) {
       bonusPercentageActual = .04 + .05;
@@ -82,7 +82,7 @@ function bonusPercentage(employeeArray) {
     }else if (employeeArray[i].reviewRating === 3){
       bonusPercentageActual = .04 
       bonusArray.push(bonusPercentageActual)
-    } 
+    } // end of checking at 3 rating / additional .05
     
     else if (employeeArray[i].reviewRating === 4 && employeeArray[i].employeeNumber < 10000) {
       bonusPercentageActual = .06 + .05;
@@ -90,7 +90,7 @@ function bonusPercentage(employeeArray) {
     }else if (employeeArray[i].reviewRating === 4){
       bonusPercentageActual = .06
       bonusArray.push(bonusPercentageActual)
-    } 
+    }  // end of checking at 4 rating / additional .05
     
     else if (employeeArray[i].reviewRating === 5 && employeeArray[i].employeeNumber < 10000) {
       bonusPercentageActual = .1 + .05;
@@ -98,15 +98,20 @@ function bonusPercentage(employeeArray) {
     }else if (employeeArray[i].reviewRating === 5){
       bonusPercentageActual = .1
       bonusArray.push(bonusPercentageActual)
-    }
+    }// end of checking at 5 rating / additional .05
     for (let i = 0; i < employeeArray.length; i++) {
       if (bonusArray[i] > .13) {
         console.log('Test');
         bonusArray[i] = .13
-      }
+      } // end of bonus cap
     } // end of second for loop
-  } // End For loop
-  
+    // for (let i = 0; i < employeeArray.length; i++) {
+    //   if (employeeArray[i].annualSalary > 65000) {
+    //     console.log('in deal');
+    //     bonusArray[i] = .01 
+    //   } // end of Salary Cap
+    // } // end of third for loop
+    }//End For loop
   return bonusArray
 }
 
@@ -120,16 +125,31 @@ bonusPercentage(employees);
 // need to then make a function that times the over bonusPercent and get the $ amount for bonus
 // Plug all data into a single array through the use of a function to combine them calling all featured functions
 
+let givenCompensation = [];
+
+function totalCompensation(employeeArray){
+  let compensation = 0
+  for (let i = 0; i < employeeArray.length; i++) {
+    compensation = totalBonusArray[i] + employeeArray[i].annualSalary ; 
+    givenCompensation.push(compensation);
+  } // end for loop
+  return givenCompensation
+}// end of totalCompensation (doesnt quite work yet)
+
+totalBonusArray = [] ;
+
+function totalBonus(employeeArray){
+  let sumBonus = 0
+  for (let i = 0; i < employeeArray.length; i++) {
+    sumBonus = bonusArray[i] * employeeArray[i].annualSalary
+    totalBonusArray.push(sumBonus);
+  } // End of for loop
+  return totalBonusArray
+} // end of function totalBonus
+
+totalBonus(employees);
 
 
-function totalCompensation(){
-
-}
-
-
-function totalBonus(){
-
-}
 
 // Take small steps! Don't write a for loop and two functions that do all of the calculations right away.
 // This problem is massive! Break the problem down. Use the debugger.
