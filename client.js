@@ -99,7 +99,13 @@ function bonusPercentage(employeeArray) {
       bonusPercentageActual = .1
       bonusArray.push(bonusPercentageActual)
     }
-  }
+    for (let i = 0; i < employeeArray.length; i++) {
+      if (bonusArray[i] > .13) {
+        console.log('Test');
+        bonusArray[i] = .13
+      }
+    } // end of second for loop
+  } // End For loop
   
   return bonusArray
 }
